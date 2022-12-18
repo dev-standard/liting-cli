@@ -1,0 +1,11 @@
+###
+ # @Date: 2022-12-16 22:40:34
+ # @Author: liting luz.liting@gmail.com
+ # @LastEditors: liting luz.liting@gmail.com
+ # @LastEditTime: 2022-12-16 22:54:55
+ # @FilePath: /template/.husky/pre-commit
+### 
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npx lint-staged
