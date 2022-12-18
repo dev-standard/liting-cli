@@ -4,10 +4,6 @@
   "version": "0.0.0",
   "private": false,
   "description": "a dev cli",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
   "author": "liting-yes <luz.liting@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/dev-standard/liting-cli#readme",
@@ -24,6 +20,13 @@
   },
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "liting": "dist/index.cjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "files": [
     "dist"
   ],
@@ -34,6 +37,12 @@
     "build": "unbuild",
     "format": "eslint --fix"
   },
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "commander": "^9.4.1",
+    "download-git-repo": "^3.0.2",
+    "ora": "^6.1.2"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.34.0",
     "@commitlint/cli": "^17.3.0",
@@ -43,7 +52,7 @@
     "commitizen": "^4.2.6",
     "eslint": "^8.30.0",
     "husky": "^8.0.0",
-    "inquirer": "8",
+    "inquirer": "^8.2.5",
     "lint-staged": "^13.1.0",
     "release-it": "^15.5.1",
     "unbuild": "^1.0.2"

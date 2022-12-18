@@ -62,7 +62,7 @@ const dependencies = {
 	"download-git-repo": "^3.0.2",
 	ora: "^6.1.2"
 };
-const pkgInfo = {
+var pkgInfo = {
 	name: name,
 	type: type,
 	version: version,
