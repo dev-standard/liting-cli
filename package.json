@@ -1,19 +1,19 @@
 {
-  "name": "@liting-yes/template",
+  "name": "liting-cli",
   "type": "module",
   "version": "0.1.0",
   "private": false,
-  "description": "a basic template about front end",
+  "description": "a dev cli",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
   },
   "author": "liting-yes <luz.liting@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/dev-standard/template#readme",
+  "homepage": "https://github.com/dev-standard/liting-cli#readme",
   "keywords": [
-    "template",
-    "frontend"
+    "cli",
+    "liting"
   ],
   "exports": {
     ".": {
