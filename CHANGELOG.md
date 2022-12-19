@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.4](https://github.com/dev-standard/liting-cli/compare/0.2.3...0.2.4) (2022-12-19)
+
+
+### Bug Fixes
+
+* try to fix Mismatch ([e675969](https://github.com/dev-standard/liting-cli/commit/e675969be5164f27f0fdcd1384867685dde3c3d8))
+
 ## [0.2.3](https://github.com/dev-standard/liting-cli/compare/0.2.0...0.2.3) (2022-12-19)
 
 
