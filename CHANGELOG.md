@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.1](https://github.com/dev-standard/liting-cli/compare/0.2.0...0.2.1) (2022-12-19)
+
+
+### Bug Fixes
+
+* add bin ([1ee386b](https://github.com/dev-standard/liting-cli/commit/1ee386b472803d4a26ad150933102558de3d41e5))
+
 ## 0.2.0 (2022-12-19)
 
 
