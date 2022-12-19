@@ -9,7 +9,7 @@ const inquirer = require('inquirer');
 
 const name = "liting-cli";
 const type = "module";
-const version = "0.2.2";
+const version = "0.2.4";
 const description = "a dev cli";
 const author = "liting-yes <luz.liting@gmail.com>";
 const license = "MIT";

@@ -52,6 +52,7 @@
     }
   },
   "hooks": {
+    "after:bump": "npx unbuild",
     "after:git:release": "git push origin HEAD"
   }
 }
