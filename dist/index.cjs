@@ -7,20 +7,23 @@ const ora = require('ora');
 const commander = require('commander');
 const inquirer = require('inquirer');
 
-const name = "@liting-yes/template";
+const name = "liting-cli";
 const type = "module";
-const version = "0.1.0";
-const description = "a basic template about front end";
+const version = "0.2.0";
+const description = "a dev cli";
+const bin = {
+	liting: "./dist/index.cjs"
+};
 const publishConfig = {
 	access: "public",
 	registry: "https://registry.npmjs.org"
 };
 const author = "liting-yes <luz.liting@gmail.com>";
 const license = "MIT";
-const homepage = "https://github.com/dev-standard/template#readme";
+const homepage = "https://github.com/dev-standard/liting-cli#readme";
 const keywords = [
-	"template",
-	"frontend"
+	"cli",
+	"liting"
 ];
 const exports$1 = {
 	".": {
@@ -72,6 +75,7 @@ const pkgInfo = {
 	version: version,
 	"private": false,
 	description: description,
+	bin: bin,
 	publishConfig: publishConfig,
 	author: author,
 	license: license,

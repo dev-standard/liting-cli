@@ -4,10 +4,6 @@
   "version": "0.2.0",
   "private": false,
   "description": "a dev cli",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
   "author": "liting-yes <luz.liting@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/dev-standard/liting-cli#readme",
@@ -23,6 +19,13 @@
   },
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
+  "bin": {
+    "liting": "./dist/index.cjs"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
   "files": [
     "dist"
   ],
