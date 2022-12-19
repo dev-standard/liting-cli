@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.2.3](https://github.com/dev-standard/liting-cli/compare/0.2.0...0.2.3) (2022-12-19)
+
+
+### Bug Fixes
+
+* add bin ([1ee386b](https://github.com/dev-standard/liting-cli/commit/1ee386b472803d4a26ad150933102558de3d41e5))
+* repleace bin of cjs with mjs ([602103c](https://github.com/dev-standard/liting-cli/commit/602103cb458084e127c45f381a6671b94babdc06))
+* update build file ([4287f3f](https://github.com/dev-standard/liting-cli/commit/4287f3fbfda919041b4e674d2b6b7957fbc77c0a))
+
 ## [0.2.1](https://github.com/dev-standard/liting-cli/compare/0.2.0...0.2.1) (2022-12-19)
 
 
