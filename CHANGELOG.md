@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.0 (2022-12-19)
+
+
+### Features
+
+* **create:** support create dev-standard/template ([c974b72](https://github.com/dev-standard/liting-cli/commit/c974b72c1592ad20726db8e9cf97da8acef5d7e9))
+* init ([502e3d8](https://github.com/dev-standard/liting-cli/commit/502e3d8c358c1e2e9862d8fecddb98bf8b1d766b))
+* support check version ([15aa35c](https://github.com/dev-standard/liting-cli/commit/15aa35ca62cda0c3af9c924f612234e4bfdf7481))
+
 ## 0.1.0 (2022-12-16)
 
 
