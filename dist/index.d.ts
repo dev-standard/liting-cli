@@ -7,15 +7,8 @@ import inquirer from 'inquirer';
 
 const name = "liting-cli";
 const type = "module";
-const version = "0.2.0";
+const version = "0.2.1";
 const description = "a dev cli";
-const bin = {
-	liting: "./dist/index.cjs"
-};
-const publishConfig = {
-	access: "public",
-	registry: "https://registry.npmjs.org"
-};
 const author = "liting-yes <luz.liting@gmail.com>";
 const license = "MIT";
 const homepage = "https://github.com/dev-standard/liting-cli#readme";
@@ -31,6 +24,13 @@ const exports = {
 };
 const main = "./dist/index.cjs";
 const types = "./dist/index.d.ts";
+const bin = {
+	liting: "./dist/index.mjs"
+};
+const publishConfig = {
+	access: "public",
+	registry: "https://registry.npmjs.org"
+};
 const files = [
 	"dist"
 ];
@@ -73,8 +73,6 @@ var pkgInfo = {
 	version: version,
 	"private": false,
 	description: description,
-	bin: bin,
-	publishConfig: publishConfig,
 	author: author,
 	license: license,
 	homepage: homepage,
@@ -82,6 +80,8 @@ var pkgInfo = {
 	exports: exports,
 	main: main,
 	types: types,
+	bin: bin,
+	publishConfig: publishConfig,
 	files: files,
 	scripts: scripts,
 	dependencies: dependencies,

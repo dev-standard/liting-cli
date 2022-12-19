@@ -20,7 +20,7 @@
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
   "bin": {
-    "liting": "./dist/index.cjs"
+    "liting": "./dist/index.mjs"
   },
   "publishConfig": {
     "access": "public",
