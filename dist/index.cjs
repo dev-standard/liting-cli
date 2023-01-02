@@ -4,13 +4,13 @@ const chalk = require('chalk');
 const dgr = require('download-git-repo');
 const lodashEs = require('lodash-es');
 const ora = require('ora');
+const execa = require('execa');
 const commander = require('commander');
 const inquirer = require('inquirer');
-const execa = require('execa');
 
 const name = "liting-cli";
 const type = "module";
-const version = "0.2.4";
+const version = "0.3.0";
 const description = "a dev cli";
 const author = "liting-yes <luz.liting@gmail.com>";
 const license = "MIT";
@@ -61,8 +61,11 @@ const devDependencies = {
 	"@release-it/conventional-changelog": "^5.1.1",
 	commitizen: "^4.2.6",
 	eslint: "^8.30.0",
+	"eslint-config-prettier": "^8.5.0",
+	"eslint-plugin-prettier": "^4.2.1",
 	husky: "^8.0.0",
 	"lint-staged": "^13.1.0",
+	prettier: "^2.8.1",
 	"release-it": "^15.5.1",
 	unbuild: "^1.0.2"
 };
@@ -131,11 +134,10 @@ Commander.command("kill [port]").description("kill all processes about the input
   try {
     const { stdout } = await execa.execa("lsof", [`-i:${port}`]);
     console.log(chalk.cyan(stdout), "\n");
-    let pids = [];
+    const pids = [];
     stdout.split(/\s+/).filter((str) => !str.startsWith("(")).forEach((str, i) => {
-      if (i > 9 && (i - 1) % 9 === 0 && !pids.includes(parseInt(str))) {
+      if (i > 9 && (i - 1) % 9 === 0 && !pids.includes(parseInt(str)))
         pids.push(parseInt(str));
-      }
     });
     await Inquirer.prompt([{
       type: "checkbox",
