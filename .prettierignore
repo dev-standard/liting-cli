@@ -1,1 +1,5 @@
 LICENSN
+.husky
+.vscode
+dist
+node_modules

@@ -4,8 +4,8 @@
   "eslint.problems.shortenToSingleLine": true,
   "eslint.run": "onSave",
   "eslint.workingDirectories": ["../"],
-  "eslint.validate": ["javascript", "typescript", "html", "vue", "markdown"],
-  "eslint.probe": ["javascript", "typescript", "html", "vue", "markdown"],
+  "eslint.validate": ["javascript", "typescript", "html", "vue", "markdown", "json"],
+  "eslint.probe": ["javascript", "typescript", "html", "vue", "markdown", "json"],
   "eslint.lintTask.enable": true,
   "eslint.codeActionsOnSave.mode": "all",
   "eslint.format.enable": false,
@@ -34,5 +34,9 @@
   "editor.formatOnType": false,
   "editor.codeActionsOnSave": {
     "source.fixAll": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
