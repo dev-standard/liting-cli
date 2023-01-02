@@ -4,6 +4,7 @@ import { camelCase } from 'lodash-es';
 import ora from 'ora';
 import { Command } from 'commander';
 import inquirer from 'inquirer';
+import { execa } from 'execa';
 
 const name = "liting-cli";
 const type = "module";
@@ -45,6 +46,7 @@ const dependencies = {
 	chalk: "^5.2.0",
 	commander: "^9.4.1",
 	"download-git-repo": "^3.0.2",
+	execa: "^6.1.0",
 	inquirer: "8",
 	"lodash-es": "^4.17.21",
 	ora: "^6.1.2"
@@ -122,5 +124,32 @@ Commander.command("create [template]").description("create a project from templa
     else
       spinner.succeed(chalk.greenBright(`download the template ${repo} successfully`));
   });
+});
+Commander.command("kill [port]").description("kill all processes about the input port").action(async (port) => {
+  try {
+    const { stdout } = await execa("lsof", [`-i:${port}`]);
+    console.log(chalk.cyan(stdout), "\n");
+    let pids = [];
+    stdout.split(/\s+/).filter((str) => !str.startsWith("(")).forEach((str, i) => {
+      if (i > 9 && (i - 1) % 9 === 0 && !pids.includes(parseInt(str))) {
+        pids.push(parseInt(str));
+      }
+    });
+    await Inquirer.prompt([{
+      type: "checkbox",
+      name: "pids",
+      message: chalk.yellowBright("Please select the pid to kill"),
+      choices: pids,
+      default: pids
+    }]).then(async (answer) => {
+      answer.pids.forEach(async (pid) => {
+        await execa("kill", ["-9", pid]);
+      });
+      console.log(chalk.green(`Kill pids ${chalk.greenBright(answer.pids.join(","))} successfully !`));
+    });
+  } catch (err) {
+    console.log(chalk.yellow(JSON.parse(JSON.stringify(err, ["message"], 2)).message));
+    console.log(chalk.yellow("It is possible that there is no related process for this port"));
+  }
 });
 Commander.parse();

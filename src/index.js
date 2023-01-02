@@ -2,13 +2,14 @@
  * @Date: 2022-12-18 15:49:26
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2022-12-19 00:24:35
+ * @LastEditTime: 2023-01-02 12:23:05
  * @FilePath: /liting-cli/src/index.js
  */
 import chalk from 'chalk'
 import dgr from 'download-git-repo'
 import { camelCase } from 'lodash-es'
 import ora from 'ora'
+import { execa } from 'execa'
 import pkgInfo from '../package.json' assert { type: 'json' }
 import { Commander, Inquirer } from './plugins/index.js'
 import { CRATE_TEMPLATE } from './vars.js'
@@ -28,7 +29,7 @@ Commander
     }
     else {
       if (template)
-        // eslint-disable-next-line no-console
+
         console.log(chalk.red(`Template name ${template} is incorrect`))
       await Inquirer.prompt([{
         type: 'list',
@@ -50,6 +51,39 @@ Commander
       else
         spinner.succeed(chalk.greenBright(`download the template ${repo} successfully`))
     })
+  })
+
+// kill
+Commander
+  .command('kill [port]')
+  .description('kill all processes about the input port')
+  .action(async (port) => {
+    try {
+      const { stdout } = await execa('lsof', [`-i:${port}`])
+      console.log(chalk.cyan(stdout), '\n')
+      const pids = []
+      stdout.split(/\s+/).filter(str => !str.startsWith('(')).forEach((str, i) => {
+        if (i > 9 && ((i - 1) % 9 === 0) && !pids.includes(parseInt(str)))
+          pids.push(parseInt(str))
+      })
+      await Inquirer.prompt([{
+        type: 'checkbox',
+        name: 'pids',
+        message: chalk.yellowBright('Please select the pid to kill'),
+        choices: pids,
+        default: pids,
+
+      }]).then(async (answer) => {
+        answer.pids.forEach(async (pid) => {
+          await execa('kill', ['-9', pid])
+        })
+        console.log(chalk.green(`Kill pids ${chalk.greenBright(answer.pids.join(','))} successfully !`))
+      })
+    }
+    catch (err) {
+      console.log(chalk.yellow(JSON.parse(JSON.stringify(err, ['message'], 2)).message))
+      console.log(chalk.yellow('It is possible that there is no related process for this port'))
+    }
   })
 
 Commander.parse()
