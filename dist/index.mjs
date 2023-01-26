@@ -47,6 +47,7 @@ const dependencies = {
 	commander: "^9.4.1",
 	"download-git-repo": "^3.0.2",
 	execa: "^6.1.0",
+	giget: "^1.0.0",
 	inquirer: "8",
 	"lodash-es": "^4.17.21",
 	ora: "^6.1.2"
@@ -99,7 +100,8 @@ const Commander = new Command();
 const Inquirer = inquirer;
 
 const CRATE_TEMPLATE = {
-  template: "dev-standard/template"
+  template: "dev-standard/template",
+  "template-ts": "dev-standard/template-ts"
 };
 
 Commander.version(chalk.greenBright.bold(pkgInfo.version), "-v, --version", "the current version of liting-cli");
