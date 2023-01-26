@@ -2,7 +2,7 @@
  * @Date: 2022-12-18 15:49:26
  * @Author: liting luz.liting@gmail.com
  * @LastEditors: liting luz.liting@gmail.com
- * @LastEditTime: 2023-01-02 12:23:05
+ * @LastEditTime: 2023-01-26 10:53:06
  * @FilePath: /liting-cli/src/index.js
  */
 import chalk from 'chalk'
@@ -10,6 +10,7 @@ import dgr from 'download-git-repo'
 import { camelCase } from 'lodash-es'
 import ora from 'ora'
 import { execa } from 'execa'
+// eslint-disable-next-line prettier/prettier
 import pkgInfo from '../package.json' assert { type: 'json' }
 import { Commander, Inquirer } from './plugins/index.js'
 import { CRATE_TEMPLATE } from './vars.js'
