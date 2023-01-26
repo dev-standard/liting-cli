@@ -10,7 +10,7 @@ const inquirer = require('inquirer');
 
 const name = "liting-cli";
 const type = "module";
-const version = "0.3.0";
+const version = "0.4.0";
 const description = "a dev cli";
 const author = "liting-yes <luz.liting@gmail.com>";
 const license = "MIT";
@@ -102,8 +102,8 @@ const Commander = new commander.Command();
 const Inquirer = inquirer;
 
 const CRATE_TEMPLATE = {
-  template: "dev-standard/template",
-  "template-ts": "dev-standard/template-ts"
+  Javascript: "dev-standard/template",
+  Typescript: "dev-standard/template-ts"
 };
 
 Commander.version(chalk.greenBright.bold(pkgInfo.version), "-v, --version", "the current version of liting-cli");

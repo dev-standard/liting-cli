@@ -1,5 +1,20 @@
 # Changelog
 
+## [0.4.0](https://github.com/dev-standard/liting-cli/compare/0.2.4...0.4.0) (2023-01-26)
+
+
+### ⚠ BREAKING CHANGES
+
+* **vars:** rename template name for clearer
+
+### Features
+
+* **create:** add template-ts template ([bcbe5c3](https://github.com/dev-standard/liting-cli/commit/bcbe5c3f8220c4b94bf3f6ae1739aa7eb9ca9831))
+* **kill:** suport kill port ([a144b2c](https://github.com/dev-standard/liting-cli/commit/a144b2ca0ef56cfa734f6627c1c0cd3f3ff04a24))
+
+
+* **vars:** rename template name ([63d951c](https://github.com/dev-standard/liting-cli/commit/63d951c41977db446d6d0cae6920ccafca6aaff5))
+
 ## [0.3.0](https://github.com/dev-standard/liting-cli/compare/0.2.4...0.3.0) (2023-01-02)
 
 
